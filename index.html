@@ -1,0 +1,245 @@
+<!-- !Doctype defines html 5 -->
+<!DOCTYPE html>
+<!-- language used is English -->
+<html lang="en">
+  <!-- head contains information of webpage -->
+  <head>
+    <!-- meta tag used to define meta data for search engine -->
+    <!-- UTF-8 is characeter set -->
+    <meta charset="UTF-8" />
+    <!-- information about viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- description is used to give information about website without opening it. -->
+    <meta name="description" content="A website that helps to learn coding" />
+    <!-- keyword meta tag was used early but now it is depericated, google don't used it to rank, and yahoo and bing also ignore it. -->
+    <meta name="Keyword" content="HTML,Hacking, Ethical Hacker" />
+    <title>Web page</title>
+    <!-- linking stylesheet -->
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <!-- body containes actual visiable body -->
+  <body>
+    <!-- header part -->
+    <header>
+      <!-- nav link -->
+      <nav class="nav">
+        <div class="logo">
+          <!-- figure tag used to define figure, helps search engine to get information -->
+          <figure>
+            <img
+              src="./assets/logo.svg"
+              class="logo-img"
+              alt="logo of company"
+            />
+          </figure>
+          <a class="heading nav-a" href="/">Coading School</a>
+        </div>
+        <ul class="ul-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- body part -->
+    <div class="container">
+      <!-- aside pannel -->
+      <aside class="aside">
+        <div class="aside-heading">
+          <h2>Courses</h2>
+          <img class="collapse" src="./assets/collapse.svg" alt="" />
+        </div>
+        <h3>Web Design</h3>
+        <ul>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+        </ul>
+        <h3>Cyber Security</h3>
+        <ul>
+          <li>
+            <a href="#">Hacker</a>
+          </li>
+          <li>
+            <a href="#">Ethical Hacker</a>
+          </li>
+        </ul>
+        <h3>Artifical Intelligence</h3>
+        <ul>
+          <li>
+            <a href="#">Hacker</a>
+          </li>
+          <li>
+            <a href="#">Ethical Hacker</a>
+          </li>
+        </ul>
+        <h3>UI/UX</h3>
+        <ul>
+          <li>
+            <a href="#">Hacker</a>
+          </li>
+          <li>
+            <a href="#">Ethical Hacker</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- main part -->
+      <main class="main">
+        <!-- main heading h1 -->
+        <h1>Welcome to Coding hub.</h1>
+        <!-- aricle tag to define seperate article -->
+        <article>
+          <!-- h2 sub heading -->
+          <h2>Why Join us?</h2>
+          <p>
+            Lorem ipsum, dolor sit <mark>amet</mark> consectetur
+            <em>adipisicing</em>
+            elit. Voluptates, doloremque!
+          </p>
+        </article>
+        <!-- it is service section, speparate section so use section tag rather that div -->
+        <section>
+          <!-- h3 heading  -->
+          <h3 class="sub-heading">Our Services</h3>
+          <div class="service">
+            <!-- 1 article of servies -->
+            <article class="article">
+              <!-- h4 subheading-->
+              <h4>Tea Making Process</h4>
+              <!-- order list used -->
+              <ol type="1" start="4">
+                <li>Boil Water</li>
+                <li>Add Sugar</li>
+                <li>Add Milk</li>
+                <li>Add Tea leaves</li>
+              </ol>
+            </article>
+            <!-- other article of servie section -->
+            <article class="article">
+              <h4>Coffee Making Process</h4>
+              <!-- ul tag used -->
+              <ul>
+                <li>Boil Water</li>
+                <li>Add Suger in Cup</li>
+                <li>Add Coffee</li>
+                <li>Add Small Amount of Boiling Water</li>
+                <li>Ster</li>
+                <li>Pour Boiling Water</li>
+              </ul>
+            </article>
+            <!-- another article of service section -->
+            <article class="article">
+              <h4>Book Harry Potter</h4>
+              <!-- description list -->
+              <dl>
+                <dt>Author</dt>
+                <dd>JK Rowling</dd>
+                <dt>Published</dt>
+                <dd><time datetime="2001-07-21">2001 August 21</time></dd>
+              </dl>
+            </article>
+          </div>
+        </section>
+        <!-- form to get in touch -->
+        <form action="" class="form">
+          <h4 class="sub-heading">Get In Touch</h4>
+          <p class="form-paragraph">We would love to hear from You.</p>
+          <div class="name">
+            <div class="form-group">
+              <label for="first-name" class="form-label" id="name"
+                >First Name</label
+              >
+              <input
+                class="form-input"
+                placeholder="first name"
+                type="text"
+                id="first-name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="last-name" class="form-label" id="name"
+                >Last Name</label
+              >
+              <input
+                class="form-input"
+                placeholder="last name"
+                type="text"
+                id="last-name"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              class="form-input"
+              placeholder="Enter Your Email"
+              type="email"
+              id="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input
+              class="form-input"
+              placeholder="phone"
+              type="number"
+              id="phone"
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              class="form-input"
+              rows="6"
+              id="message"
+              placeholder="Describe yourself here..."
+            >
+            </textarea>
+          </div>
+          <input type="submit" value="Submit" class="btn form-input" />
+        </form>
+      </main>
+    </div>
+    <!-- footer begins here -->
+    <footer>
+      <div class="footer">
+        <article class="company">
+          <h4>Company</h4>
+
+          <p>Building innovative Solutions With Us.</p>
+        </article>
+        <section class="policy">
+          <article>
+            <h4>Company</h4>
+            <ul>
+              <li>About Us</li>
+              <li>Careers</li>
+              <li>News</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Support</h4>
+            <ul>
+              <li>Help Center</li>
+              <li>Contact</li>
+              <li>Status</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Legal</h4>
+            <ul>
+              <li>Privacy</li>
+              <li>Terms</li>
+              <li>Cookies</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+      <!-- for horizontal line -->
+      <hr class="line" />
+      <!-- entity used copy right,less than and greater then symbol -->
+      <p class="footer-text">&copy; Alright reserve &lt;Coding School&gt;</p>
+    </footer>
+  </body>
+</html>
