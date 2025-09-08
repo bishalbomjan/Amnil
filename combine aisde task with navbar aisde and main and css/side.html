@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="stylesnav.css" />
+    <link rel="stylesheet" href="bodystyles.css" />
+    <style>
+      .body {
+        display: flex;
+        gap: 10px;
+      }
+      .label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        background-color: gray;
+        border-radius: 4px;
+        margin: 0.5rem 0 0 0.3rem;
+      }
+      #check {
+        display: none;
+      }
+      .sidebar {
+        width: 30px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding: 0.3rem 0.5rem;
+        transition: width 0.4s ease;
+        margin-right: 0.5rem;
+      }
+      #check:checked ~ .sidebar {
+        width: 65px;
+        overflow: visible;
+      }
+
+      /* it is not working have to see it. */
+      #check:checked label {
+        transform: rotate("45deg");
+      }
+      #check .title {
+        display: none;
+      }
+      #check:checked .title {
+        display: inline;
+      }
+      /* upto above code is not working */
+      .main {
+        flex-grow: 1;
+      }
+      .title {
+        margin-left: 0.3rem;
+      }
+      .menu {
+        padding: 0.5rem 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <nav class="nav">
+        <div class="logo-container">
+          <figure>
+            <img class="logo" src="./assets/logo.svg" alt="Logo" />
+          </figure>
+          <p>Common Ground</p>
+        </div>
+        <section class="links">
+          <ul>
+            <li class="hide"><a href="#">Home</a></li>
+            <li class="hide"><a href="#">About</a></li>
+            <li class="hide"><a href="#">Contact</a></li>
+            <li class="hide"><a href="#">Gallery</a></li>
+            <li class="hide-desktop" onclick="showSideBar()">
+              <a href="#"
+                ><img class="menu" src="./assets/menu.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </section>
+        <ul class="sidebar-mobile">
+          <li onclick="hideSidebar()">
+            <a href="#"><img src="./assets/close.svg" alt="" /></a>
+          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Gallery</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- aside -->
+    <section class="body">
+      <aside>
+        <label for="check" class="label">&rarr;</label>
+        <input type="checkbox" id="check" />
+        <div class="sidebar">
+          <div class="menu">
+            <i class="fa-solid fa-house"></i> <span class="title">Home</span>
+          </div>
+          <div class="menu">
+            <i class="fa-solid fa-comment"></i> <span class="title">chat</span>
+          </div>
+          <div class="menu">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="title">Address</span>
+          </div>
+          <div class="menu">
+            <i class="fa-solid fa-comment"></i>
+            <span class="title">Gallary</span>
+          </div>
+        </div>
+      </aside>
+      <main class="main">
+        <main class="main">
+          <!-- main heading h1 -->
+          <h1>Welcome to Coding hub.</h1>
+          <!-- aricle tag to define seperate article -->
+          <article>
+            <!-- h2 sub heading -->
+            <h2>Why Join us?</h2>
+            <p>
+              Lorem ipsum, dolor sit <mark>amet</mark> consectetur
+              <em>adipisicing</em>
+              elit. Voluptates, doloremque!
+            </p>
+          </article>
+          <!-- it is service section, speparate section so use section tag rather that div -->
+          <section>
+            <!-- h3 heading  -->
+            <h3 class="sub-heading">Our Services</h3>
+            <div class="service">
+              <!-- 1 article of servies -->
+              <article class="article">
+                <!-- h4 subheading-->
+                <h4>Tea Making Process</h4>
+                <!-- order list used -->
+                <ol type="1" start="4">
+                  <li>Boil Water</li>
+                  <li>Add Sugar</li>
+                  <li>Add Milk</li>
+                  <li>Add Tea leaves</li>
+                </ol>
+              </article>
+              <!-- other article of servie section -->
+              <article class="article">
+                <h4>Coffee Making Process</h4>
+                <!-- ul tag used -->
+                <ul>
+                  <li>Boil Water</li>
+                  <li>Add Suger in Cup</li>
+                  <li>Add Coffee</li>
+                  <li>Add Small Amount of Boiling Water</li>
+                  <li>Ster</li>
+                  <li>Pour Boiling Water</li>
+                </ul>
+              </article>
+              <!-- another article of service section -->
+              <article class="article">
+                <h4>Book Harry Potter</h4>
+                <!-- description list -->
+                <dl>
+                  <dt>Author</dt>
+                  <dd>JK Rowling</dd>
+                  <dt>Published</dt>
+                  <dd><time datetime="2001-07-21">2001 August 21</time></dd>
+                </dl>
+              </article>
+            </div>
+          </section>
+          <!-- form to get in touch -->
+          <form action="" class="form">
+            <h4 class="sub-heading">Get In Touch</h4>
+            <p class="form-paragraph">We would love to hear from You.</p>
+            <div class="name">
+              <div class="form-group">
+                <label for="first-name" class="form-label" id="name"
+                  >First Name</label
+                >
+                <input
+                  class="form-input"
+                  placeholder="first name"
+                  type="text"
+                  id="first-name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="last-name" class="form-label" id="name"
+                  >Last Name</label
+                >
+                <input
+                  class="form-input"
+                  placeholder="last name"
+                  type="text"
+                  id="last-name"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                class="form-input"
+                placeholder="Enter Your Email"
+                type="email"
+                id="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input
+                class="form-input"
+                placeholder="phone"
+                type="number"
+                id="phone"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                class="form-input"
+                rows="6"
+                id="message"
+                placeholder="Describe yourself here..."
+              >
+              </textarea>
+            </div>
+            <input type="submit" value="Submit" class="btn form-input" />
+          </form>
+        </main>
+      </main>
+    </section>
+    <!-- footer begins here -->
+    <footer>
+      <div class="footer">
+        <article class="company">
+          <h4>Company</h4>
+
+          <p>Building innovative Solutions With Us.</p>
+        </article>
+        <section class="policy">
+          <article>
+            <h4>Company</h4>
+            <ul>
+              <li>About Us</li>
+              <li>Careers</li>
+              <li>News</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Support</h4>
+            <ul>
+              <li>Help Center</li>
+              <li>Contact</li>
+              <li>Status</li>
+            </ul>
+          </article>
+          <article>
+            <h4>Legal</h4>
+            <ul>
+              <li>Privacy</li>
+              <li>Terms</li>
+              <li>Cookies</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+      <!-- for horizontal line -->
+      <hr class="line" />
+      <!-- entity used copy right,less than and greater then symbol -->
+      <p class="footer-text">&copy; Alright reserve &lt;Coding School&gt;</p>
+    </footer>
+    <script>
+      function showSideBar() {
+        const sideBar = document.querySelector(".sidebar-mobile");
+        sideBar.style.display = "flex";
+      }
+      function hideSidebar() {
+        const sideBar = document.querySelector(".sidebar-mobile");
+        sideBar.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
