@@ -16,8 +16,8 @@ console.log(averageAge);
 // q3) Every child is gen-z or not
 function checkGenZ(students) {
   return students.every((student) => student.age < 28 && student.age > 13)
-    ? "Gen-z"
-    : "No";
+    ? "Yes all student are Gen-z"
+    : "No all student are not gen-z";
 }
 console.log(checkGenZ(students));
 

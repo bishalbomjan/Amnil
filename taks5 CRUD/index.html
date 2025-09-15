@@ -11,14 +11,18 @@
       <h1>CRUD Application</h1>
       <div class="form-container">
         <form class="form">
-          <input class="email" placeholder="Email" type="email" />
+          <input type="text" class="id" hidden />
+          <input class="email" placeholder="Enter Email" type="email" />
+          <input
+            class="name"
+            id="username"
+            placeholder="Enter Name"
+            type="text"
+          />
+          <input type="text" placeholder="Enter Phone" id="phone" />
           <button type="button" onclick="add()" class="btn btn-submit">
             Submit
           </button>
-        </form>
-        <form class="form update-form">
-          <input type="text" class="id" hidden />
-          <input class="uemail" placeholder="Email" type="email" />
           <button onclick="update()" type="button" class="btn btn-update">
             Update
           </button>
@@ -27,10 +31,13 @@
       <table>
         <thead>
           <tr>
-            <th colspan="2">Email Details</th>
+            <th colspan="5">Email Details</th>
           </tr>
           <tr>
-            <th>Emails</th>
+            <th>S.N</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone</th>
             <th>Action</th>
           </tr>
         </thead>
