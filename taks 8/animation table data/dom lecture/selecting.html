@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="container">
+    <div id="jump">herp</div>
+    <div class="kite">wrong</div>
+    <p class="pag">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cumque, quis?
+    </p>
+    <input type="text" name="ron" placeholder="name" />
+    <h1 id="head">Heading 1</h1>
+    <h1 id="head">Heading 2</h1>
+    <script>
+      const head = document.getElementById("head");
+      console.log(head.outerHTML);
+      const input = document.getElementsByName("ron");
+      console.log(input[0].outerHTML);
+      const parg = document.getElementsByClassName("pag");
+      console.log(parg);
+      console.log(parg[0].outerText);
+      const kite = document.querySelector(".kite");
+      console.log(kite.innerText);
+      const jump = (document.querySelector("#jump").innerText =
+        "bishal bomjan");
+      console.log(jump);
+      const cont = document.getElementsByClassName("container");
+      const h1 = document.getElementsByTagName("h1");
+      console.log(h1[1].firstElementChild);
+    </script>
+  </body>
+</html>
