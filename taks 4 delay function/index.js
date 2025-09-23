@@ -1,11 +1,14 @@
-const getPromise = () => {
-  const p1 = new Promise((reslove, reject) => {
-    let success = true;
-    if (success) {
-      reslove("Operation successful");
-    } else {
-      reject("Operation Failed");
-    }
+function delay(ms, shouldSucceed = true) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldSucceed) {
+        resolve(`Resolved after ${ms} ms`);
+      } else {
+        reject(`Rejected after ${ms} ms`);
+      }
+    }, ms);
   });
-};
-setTimeout(getPromise, 5000);
+}
+
+delay(2000).then(console.log("Success")).catch(console.log("Error"));
+delay(1500, false).then(console.log).catch(console.error);

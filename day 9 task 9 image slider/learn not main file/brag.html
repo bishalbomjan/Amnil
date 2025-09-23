@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=4, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Port+Lligat+Sans&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        display: flex;
+        padding: 0 35px;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #343f4f;
+      }
+      .wrapper {
+        max-width: 1200px;
+        position: relative;
+      }
+      .wrapper .carousel {
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 0px;
+      }
+      .wrapper .ico {
+        position: absolute;
+        top: 50%;
+        height: 46px;
+        width: 46px;
+        text-align: center;
+        line-height: 46px;
+        background-color: #fff;
+        font-size: 1.2rem;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+      .wrapper .ico:first-child {
+        left: -23px;
+      }
+      .wrapper .ico:last-child {
+        right: -23px;
+      }
+      .carousel img {
+        height: 340px;
+        width: calc(100% / 3);
+        object-fit: cover;
+        padding: 0 10px;
+      }
+      .carousel img:first-child {
+        margin-left: 0px;
+      }
+      @media screen and (max-width: 900px) {
+        .carousel img {
+          width: calc(100% / 2);
+        }
+      }
+      @media screen and (max-width: 550px) {
+        .carousel img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="left" class="ico">&lt;</div>
+      <div class="carousel">
+        <img src="../images/dog.jpg" alt="" />
+        <img src="../images/flag.jpg" alt="" />
+        <img src="../images/genz.webp" alt="" />
+        <img src="../images/mountain.jpg" alt="" />
+      </div>
+      <div id="right" class="ico">&gt;</div>
+    </div>
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const firstImg = carousel.querySelector("img");
+      const arrowIcons = document.querySelectorAll(".wrapper .ico");
+
+      let isDragStart = false;
+      let prevPageX = 0;
+      let prevScrollLeft = 0;
+      let firstImgWidth = firstImg ? firstImg.offsetWidth : 0;
+
+      // Pointer (mouse + touch) handlers
+      const dragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX;
+        prevScrollLeft = carousel.scrollLeft;
+        carousel.style.cursor = "grabbing";
+
+        if (e.pointerId && e.target.setPointerCapture) {
+          try {
+            e.target.setPointerCapture(e.pointerId);
+          } catch (err) {}
+        }
+      };
+
+      const dragging = (e) => {
+        if (!isDragStart) return;
+        e.preventDefault();
+        const positionDiff = e.pageX - prevPageX;
+        carousel.scrollLeft = prevScrollLeft - positionDiff;
+      };
+
+      const dragStop = (e) => {
+        if (!isDragStart) return;
+        isDragStart = false;
+        carousel.style.cursor = "grab";
+
+        if (e && e.pointerId && e.target.releasePointerCapture) {
+          try {
+            e.target.releasePointerCapture(e.pointerId);
+          } catch (err) {}
+        }
+      };
+
+      // Event listeners
+      carousel.addEventListener("pointerdown", dragStart);
+      document.addEventListener("pointermove", dragging);
+      document.addEventListener("pointerup", dragStop);
+      document.addEventListener("pointercancel", dragStop);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Drag Slider</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f0f0f0;
+        font-family: sans-serif;
+      }
+
+      .slider {
+        width: 80%;
+        max-width: 600px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        background: white;
+        cursor: grab;
+      }
+
+      .track {
+        display: flex;
+        transition: transform 0.3s;
+      }
+
+      .slide {
+        min-width: 100%;
+      }
+
+      .slide img {
+        width: 100%;
+        display: block;
+        user-select: none; /* prevent image selection */
+        pointer-events: none; /* drag works smoothly */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider" id="slider">
+      <div class="track" id="track">
+        <div class="slide">
+          <img src="https://picsum.photos/id/1015/600/400" alt="1" />
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/id/1016/600/400" alt="2" />
+        </div>
+        <div class="slide">
+          <img src="https://picsum.photos/id/1020/600/400" alt="3" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const slider = document.getElementById("slider");
+      const track = document.getElementById("track");
+      const slides = track.children;
+
+      let isDragging = false;
+      let startX;
+      let currentTranslate = 0;
+      let currentIndex = 0;
+
+      slider.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        console.log("startIndex", startX);
+        track.style.transition = "none"; // remove transition while dragging
+      });
+
+      slider.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        console.log("move", dx);
+        track.style.transform = `translateX(${
+          -currentIndex * slider.clientWidth + dx
+        }px)`;
+      });
+
+      slider.addEventListener("mouseup", (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        const dx = e.clientX - startX;
+        console.log("up", dx);
+        if (dx < -50 && currentIndex < slides.length - 1) currentIndex++; // swipe left
+        if (dx > 50 && currentIndex > 0) currentIndex--; // swipe right
+        track.style.transition = "transform 0.3s";
+        track.style.transform = `translateX(${
+          -currentIndex * slider.clientWidth
+        }px)`;
+      });
+
+      // Make it work if mouse leaves slider
+      slider.addEventListener("mouseleave", () => {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = "transform 0.3s";
+        track.style.transform = `translateX(${
+          -currentIndex * slider.clientWidth
+        }px)`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+.btn {
+  color: white;
+  padding: 0.5rem 2rem;
+  border: 0;
+  border-radius: 5px;
+}
+.primary {
+  background-color: dodgerblue;
+}
+.primary:hover {
+  background-color: blue;
+}
+.secondary {
+  background-color: red;
+}
+.secondary:hover {
+  background-color: deeppink;
+}

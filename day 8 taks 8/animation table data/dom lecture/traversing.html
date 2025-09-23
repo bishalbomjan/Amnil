@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="title">
+      <p class="text">Lorem ipsum dolor sit amet1.</p>
+      <p class="text2">Lorem ipsum dolor sit amet2.</p>
+      <p class="text">Lorem ipsum dolor sit amet3.</p>
+      <p class="text">Lorem ipsum dolor sit amet4.</p>
+    </div>
+    <script>
+      const title = document.getElementsByClassName("text2");
+      console.log(title[0].nextElementSibling.innerHTML);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+:root {
+  --primary-color: dodgerblue;
+  --hover-color: blueviolet;
+  --toast-color: teal;
+}
+.formGroup {
+  margin: 5px 10px;
+}
+.label {
+  padding: 5px 10px;
+}
+.btn {
+  background-color: var(--primary-color);
+  padding: 0.3rem 1rem;
+  outline: 0;
+}
+.btn:hover {
+  background-color: var(--hover-color);
+}
+.email,
+.name {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 0;
+  outline: 0;
+}
+.noActive {
+  display: none;
+}
+.active {
+  display: block;
+  position: absolute;
+  max-width: 110px;
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  right: 20px;
+  animation-name: ani;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  background-color: var(--toast-color);
+  border-radius: 10px;
+  bottom: 40px;
+}
+.animate {
+}
+@keyframes ani {
+  0% {
+    right: 0;
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+    /* translatex: 25%; */
+  }
+  50% {
+    opacity: 0.5;
+    /* translatex: 50%; */
+  }
+  100% {
+    opacity: 1;
+    /* translatex: 100%; */
+    right: 20px;
+  }
+}

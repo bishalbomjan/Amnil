@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="pop.css" /> -->
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body onload="readAll()">
+    <!-- <div class="popper">
+      <label for="check" class="btn-label">Click Me</label>
+      <input type="checkbox" id="check" />
+      <section class="pop">
+        <label for="check" class="cross"
+          ><img src="./image/close.svg" alt=""
+        /></label>
+        <h1>Heading 1</h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+      </section>
+    </div> -->
+    <div class="container">
+      <h1>CRUD Application</h1>
+      <div class="form-container">
+        <form class="form">
+          <input type="text" class="id" hidden />
+          <input class="email" placeholder="Enter Email" type="email" />
+          <input
+            class="name"
+            id="username"
+            placeholder="Enter Name"
+            type="text"
+          />
+          <input type="text" placeholder="Enter Phone" id="phone" />
+          <button type="button" onclick="add()" class="btn btn-submit">
+            Submit
+          </button>
+          <button onclick="update()" type="button" class="btn btn-update">
+            Update
+          </button>
+        </form>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="5">Person Details</th>
+          </tr>
+          <tr>
+            <th>S.N</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody class="data_table"></tbody>
+      </table>
+      <script src="cache.js"></script>
+    </div>
+  </body>
+</html>
