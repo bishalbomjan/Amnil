@@ -1,5 +1,5 @@
 import Add from './components/formData/Add'
-
+import './App.css'
 
 const App = () => {
   const handlePass = (obj)=>{

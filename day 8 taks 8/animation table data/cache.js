@@ -38,12 +38,6 @@ function add() {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const nameRegex = /^[A-Za-z\s]{3,50}$/;
   if (!nameRegex.test(name)) {
-    /*this is for fellow intern 
-you are free to see and understand code 
-but don't copy exact code of mine
-such that we have exact output
-if you need help feel free to ask */
-
     const errorname = document.getElementById("errorname");
     errorname.style.display = "block";
     errorname.innerText =

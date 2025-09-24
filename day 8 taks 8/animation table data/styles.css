@@ -115,12 +115,6 @@ input[type="text"] {
   }
 }
 
-/*this is for fellow intern 
-you are free to see and understand code 
-but don't copy exact code of mine
-such that we have exact output
-if you need help feel free to ask */
-
 @keyframes tableAnimi {
   0% {
     transform: translateY(0);
