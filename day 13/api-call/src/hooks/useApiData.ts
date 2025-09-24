@@ -6,15 +6,23 @@ export interface Todo {
   title: string;
   completed: boolean;
 }
-const useApiData = () => {
+const useApiData = (endpoint: string) => {
   const [data, setData] = useState<Todo[]>([]);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   useEffect(() => {
+    setLoading(true);
     apiClient
-      .get("/todos")
-      .then((res) => setData(res.data))
-      .catch((err) => setError(err.message));
+      .get(endpoint)
+      .then((res) => {
+        setData(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
-  return { data, error };
+  return { data, error, loading };
 };
 export default useApiData;
