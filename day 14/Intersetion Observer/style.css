@@ -1,0 +1,149 @@
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+body {
+  background: rgb(22, 22, 92);
+}
+.seanContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  opacity: 1;
+}
+/* .seanContainer.show {
+  animation-name: ani;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.seanContainer.remove {
+  animation-name: rem;
+  opacity: 0;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+} */
+.sean {
+  background: url("./images/back.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80vw;
+  border-radius: 10px;
+
+  height: 100vh;
+  margin-bottom: 2rem;
+}
+.headingMain {
+  color: dodgerblue;
+}
+.text {
+  color: white;
+}
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: 0;
+}
+.sean .img1,
+.sean .img2 {
+  object-fit: cover;
+}
+.container {
+  display: grid;
+  grid-template: repeat(3, 50fr) / repeat(2, 50fr);
+  gap: 3rem;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  justify-self: center;
+  /* background-color: gold; */
+}
+.img1,
+.img2 {
+  width: 30rem;
+  height: 40rem;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.img1.show {
+  animation-name: ani;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.img1.remove {
+  animation-name: rem;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  opacity: 0;
+}
+@keyframes ani {
+  0% {
+    opacity: 0;
+    translate: 100% 0;
+  }
+  50% {
+    opacity: 0;
+    translate: 50% 0;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes rem {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  50% {
+    opacity: 0;
+    translate: 50% 0;
+  }
+  100% {
+    opacity: 0;
+    translate: 100% 0;
+  }
+}
+.img2.show2 {
+  animation-name: ani2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.img2.remove2 {
+  animation-name: rem2;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  opacity: 0;
+}
+@keyframes ani2 {
+  0% {
+    opacity: 0;
+    translate: 100% 0;
+  }
+  50% {
+    opacity: 0;
+    translate: -50% 0;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@keyframes rem2 {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  50% {
+    opacity: 0;
+    translate: -50% 0;
+  }
+  100% {
+    opacity: 0;
+    translate: -100% 0;
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="seanContainer">
+      <div class="sean">
+        <div class="testmonial">
+          <h1 class="headingMain">Wanderlust</h1>
+          <p class="text">Capturing the world's most breathtaking moments</p>
+          <button onclick="theme()" class="btn">Change theme</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <img class="img2" src="images/choco.jpg" alt="" />
+      <img class="img1" src="images/dog.jpg" alt="" />
+      <img class="img2" src="images/flag.jpg" alt="" />
+      <img class="img1" src="images/mountain.jpg" alt="" />
+      <img class="img2" src="images/rice.jpg" alt="" />
+      <img class="img1" src="images/back.jpg" alt="" />
+    </div>
+
+    <script>
+      function theme() {
+        document.body.style.background =
+          document.body.style.background === "white"
+            ? "rgb(22, 22, 92)"
+            : "white";
+      }
+
+      //   function head() {
+      //     const observer = new IntersectionObserver(
+      //       (entries) => {
+      //         entries.forEach((entry) => {
+      //           if (entry.isIntersecting) {
+      //             entry.target.classList.add("show");
+      //             entry.target.classList.remove("remove");
+      //           } else {
+      //             entry.target.classList.remove("show");
+      //             entry.target.classList.add("remove");
+      //           }
+      //         });
+      //       },
+      //       { threshold: 0.3 } // 20% of element visible
+      //     );
+      //     const head = document.querySelectorAll(".seanContainer");
+      //     head.forEach((item) => observer.observe(item));
+      //   }
+
+      function one() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+                entry.target.classList.remove("remove");
+              } else {
+                entry.target.classList.remove("show");
+                entry.target.classList.add("remove");
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        const image = document.querySelectorAll(".img1");
+        image.forEach((item) => observer.observe(item));
+      }
+      function two() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("show2");
+                entry.target.classList.remove("remove2");
+              } else {
+                entry.target.classList.remove("show2");
+                entry.target.classList.add("remove2");
+              }
+            });
+          },
+          { threshold: 0.3 }
+        );
+        const image2 = document.querySelectorAll(".img2");
+        image2.forEach((item) => observer.observe(item));
+      }
+      one();
+      two();
+    </script>
+  </body>
+</html>

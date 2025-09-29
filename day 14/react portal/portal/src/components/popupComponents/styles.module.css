@@ -1,0 +1,59 @@
+:root {
+  --background: rgba(0, 0, 0, 0.2);
+  --btn-primary: dodgerblue;
+  --btn-danger: red;
+  --btn-danger-hover: rgb(243, 73, 73);
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--background);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerBox {
+  position: relative;
+  width: 80%;
+  box-shadow: 0 0 5px 2px var(--background);
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 10px;
+  background: white;
+}
+.btnClickContainer {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.btn {
+  padding: 0.5rem 0.8rem;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+}
+.btnPrimary {
+  background-color: var(--btn-primary);
+  color: white;
+}
+.btnAbsolute {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.btnDanger {
+  background-color: var(--btn-danger);
+  color: white;
+}
+.btnDanger:hover {
+  background-color: var(--btn-danger-hover);
+}

@@ -1,0 +1,15 @@
+[data-theme="light"] {
+  --color-background: #fafafa;
+  --color-foreground: #1f2023;
+}
+
+[data-theme="dark"] {
+  --color-background: #1f2023;
+  --color-foreground: #fafafa;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
